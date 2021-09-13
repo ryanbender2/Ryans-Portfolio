@@ -1,0 +1,44 @@
+html {
+    background: black;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #dbdbdb;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+header {
+    display: flex;
+    background: black;
+}
+
+.nav {
+    padding: 6px;
+    flex-grow: 1;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    margin-left: 1em;
+    margin-right: 1em;
+    gap: 1em;
+}
+
+.nav-list li:nth-last-of-type(1) {
+    margin-right: auto;
+}
+
+.nav-list li:nth-last-of-type(2) {
+    margin-left: auto;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    color: white;
+}
