@@ -3,6 +3,30 @@ html {
   margin: 0;
 }
 
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .nav-list a {
   text-decoration: none;
   color: #dbdbdb;
@@ -10,6 +34,10 @@ html {
     "Helvetica", "Arial", sans-serif;
   font-size: 1.2em;
   font-weight: 400;
+}
+
+.color-transition {
+  transition: color 0.3s;
 }
 
 header {
@@ -72,6 +100,7 @@ header {
     display: none;
   }
 }
+
 @media all and (max-width: 500px) {
   header {
     display: none;
@@ -82,30 +111,42 @@ header {
 }
 
 footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    color: #dbdbdb;
-    padding: 1.5em;
-    font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
-      "Helvetica", "Arial", sans-serif;
-    font-size: 1em;
-    font-weight: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  color: #dbdbdb;
+  padding: 1.5em;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: 100;
 }
 
 .fill-white {
-    background: white;
-    border: .2em solid white;
-    border-radius: 1em;
+  background: white;
+  border: 0.2em solid white;
+  border-radius: 1em;
+}
+
+.linkedin-icon {
+  background: white;
+  border: 0.15em solid white;
+  border-radius: 0.3em;
+}
+
+.instagram-icon {
+  background: white;
+  border: 0.12em solid white;
+  border-radius: 0.4em;
 }
 
 .smooth-hover {
-    transition: background-color .3s, border-color .3s;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 footer img:hover {
-    background-color: rgb(146, 146, 146);
-    border-color: rgb(146, 146, 146);
-    cursor: pointer;
+  background-color: rgb(146, 146, 146);
+  border-color: rgb(146, 146, 146);
+  cursor: pointer;
 }
