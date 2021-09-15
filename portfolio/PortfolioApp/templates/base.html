@@ -11,37 +11,53 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         <script src="{% static 'js/base.js' %}"></script>
         <script src="{% static 'js/live.js' %}"></script>
+        {% block head %}{% endblock %}
         <title>{% block title %}Ryan Bender{% endblock %}</title>
     </head>
-    <div id="mobile-header">
-        <div class="hamburger-menu">
-            <span class="hamburger-menu-bar"></span>
-            <span class="hamburger-menu-bar"></span>
-            <span class="hamburger-menu-bar last-bar"></span>
+    <body>
+        <div id="mobile-header">
+            <div class="hamburger-menu">
+                <span class="hamburger-menu-bar"></span>
+                <span class="hamburger-menu-bar"></span>
+                <span class="hamburger-menu-bar last-bar"></span>
+            </div>
         </div>
-    </div>
-    <header>
-        <div class="header-wrapper">
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#" class="color-transition hover-underline-animation">Home</a></li>
-                    <li><a href="#" class="color-transition hover-underline-animation">Experience</a></li>
-                    <li><a href="#" class="color-transition hover-underline-animation">Projects</a></li>
-                </ul>
-            </nav>
+        <header>
+            <div class="header-wrapper">
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#" class="color-transition
+                                hover-underline-animation">Home</a></li>
+                        <li><a href="#" class="color-transition
+                                hover-underline-animation">Experience</a></li>
+                        <li><a href="#" class="color-transition
+                                hover-underline-animation">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="base-content-wrapper">
+            {% block content %}{% endblock %}
         </div>
-    </header>
-    {% block body %}{% endblock %}
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <footer>
-        Website designed and developed by Ryan Bender
-        <img src="{% static 'images/github.svg' %}" title="GitHub" class="fill-white smooth-hover" alt="GitHub"/>
-        <img src="{% static 'images/linkedin.svg' %}" title="Linkedin" class="linkedin-icon smooth-hover" alt="Linkedin"/>
-        <img src="{% static 'images/instagram.svg' %}" title="Instagram" class="instagram-icon smooth-hover" alt="Instagram"/>
-    </footer>
+        <br>
+        <br>
+        <br>
+        <footer>
+            <div class="footer-column"><div id="snake-game"></div></div>
+            <div class="footer-column"><ul><li>Website designed and developed by Ryan Bender</li></ul></div>
+            <div class="footer-column"><ul id="social-media-icons">
+                    <li><img src="{% static 'images/github.svg' %}"
+                            title="GitHub"
+                            class="fill-white smooth-hover" alt="GitHub" /></li>
+                    <li><img src="{% static 'images/linkedin.svg' %}"
+                            title="Linkedin"
+                            class="linkedin-icon smooth-hover"
+                            alt="Linkedin" /></li>
+                    <li><img src="{% static 'images/instagram.svg' %}"
+                            title="Instagram"
+                            class="instagram-icon smooth-hover"
+                            alt="Instagram" /></li>
+                </ul></div>
+        </footer>
+    </body>
 </html>
