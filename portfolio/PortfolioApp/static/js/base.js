@@ -9,13 +9,33 @@ $(document).ready(() => {
         hamburger.toggleClass("active")
     });
 
+    // fadeInPage()
+
     var numOfColumns = 17;
     var numOfRows = 6;
     gameBoard = createGrid($('#snake-game'), numOfColumns, numOfRows)
     boardMaxX = gameBoard.length
     boardMaxY = gameBoard[0].length
-    playGame()
+    // playGame()
 })
+
+async function fadeInPage() {
+    $('header').css('opacity', '0')
+    $('.header-wrapper').css('opacity', '0')
+    $('.footer-column').css('opacity', '0')
+    $('#base-content-wrapper').css('opacity', '0')
+
+    //:nth-last-of-type(2)
+    $('.header-wrapper').fadeTo(1000, 1)
+    $('header').fadeTo(2000, 1)
+    await sleep(1000)
+    $('#base-content-wrapper').fadeTo(3000, 1)
+    await sleep(500)
+    $('.footer-column:nth-last-of-type(2)').fadeTo(3000, 1)
+    await sleep(500)
+    $('.footer-column:nth-last-of-type(1)').fadeTo(1000, 1)
+    $('.footer-column:nth-last-of-type(3)').fadeTo(2000, 1)
+}
 
 function createGrid(gameDiv, columns, rows) {
     var blockSize = '10px '
@@ -141,6 +161,7 @@ function resetBoard() {
 }
 
 async function playGame() {
+    await sleep(4000)
     // board size 6 by 17
     // you need to check if the move you do is safe
     // before you actually do the move
