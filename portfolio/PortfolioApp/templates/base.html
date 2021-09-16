@@ -9,6 +9,7 @@
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="{% static 'css/base_mobile.css' %}">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <script src="{% static 'js/base_utils.js' %}"></script>
         <script src="{% static 'js/base.js' %}"></script>
         <script src="{% static 'js/live.js' %}"></script>
         {% block head %}{% endblock %}
@@ -45,7 +46,7 @@
         <footer>
             <div class="footer-column"><div id="snake-game"></div></div>
             <div class="footer-column"><ul><li>Website designed and developed by Ryan Bender</li></ul></div>
-            <div class="footer-column"><ul id="social-media-icons">
+            <div class="footer-column"><ul>
                     <li><img src="{% static 'images/github.svg' %}"
                             title="GitHub"
                             class="fill-white smooth-hover" alt="GitHub" /></li>

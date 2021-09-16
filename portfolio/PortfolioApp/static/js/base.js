@@ -17,41 +17,24 @@ $(document).ready(() => {
     playGame()
 })
 
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+function createGrid(gameDiv, columns, rows) {
+    var blockSize = '10px '
 
-const colorNames = {
-    'rgb(0, 0, 0)': 'BLACK',
-    'rgb(255, 255, 255)': 'WHITE',
-    'rgb(255, 0, 0)': 'RED'
-}
-
-const MoveStatus = {
-    GOOD: 'GOOD',
-    HITS_SELF: 'HITS_SELF',
-    OUT_OF_BOUNDS: 'OUT_OF_BOUNDS'
-}
-
-class BoxNode {
-    constructor(ele, x, y) {
-        this.ele = ele
-        this.next = null
-        this.x = x
-        this.y = y
+    // set column and row css values
+    gameDiv.css('grid-template-columns', blockSize.repeat(columns).trim())
+    gameDiv.css('grid-template-rows', blockSize.repeat(rows).trim())
+    
+    var rowsArr = []
+    for (var i = 0; i < rows; i++) {
+        var cols = []
+        for (var j = 0; j < columns; j++) {
+            var box = $('<div></div>')
+            cols.push(new Tile(box, i, j))
+            gameDiv.append(box)
+        }
+        rowsArr.push(cols)
     }
-    setBlack() {
-        this.ele.css('background-color', 'black')
-    }
-    setRed() {
-        this.ele.css('background-color', 'red')
-    }
-    setWhite() {
-        this.ele.css('background-color', 'white')
-    }
-    getColor() {
-        return colorNames[this.ele.css('background-color')]
-    }
+    return rowsArr
 }
 
 class Snake {
@@ -60,11 +43,8 @@ class Snake {
         this.setCurrent(x, y)
     }
     setCurrent(row, col) {
-        this.head = new BoxNode(gameBoard[row][col], row, col)
-        this.head.setWhite()
-
-        this.head.next = new BoxNode(gameBoard[row - 1][col], row - 1, col)
-        this.head.next.setWhite()
+        this.head = new BoxNode(gameBoard[row][col])
+        this.head.tile.setWhite()
     }
     checkSafeMove(x, y) {
         if (x < 0 || x >= boardMaxX)
@@ -79,96 +59,170 @@ class Snake {
         }
         return MoveStatus.GOOD
     }
-    doNotEat() {
+    checkUp() {
+        return this.checkSafeMove(this.head.x - 1, this.head.y)
+    }
+    checkDown() {
+        return this.checkSafeMove(this.head.x + 1, this.head.y)
+    }
+    checkLeft() {
+        return this.checkSafeMove(this.head.x, this.head.y - 1)
+    }
+    checkRight() {
+        return this.checkSafeMove(this.head.x, this.head.y + 1)
+    }
+    removeTail() {
         var first = this.head
         var second = this.head.next
         while (second.next != null) {
             first = second
             second = second.next
         }
-        second.setBlack()
+        second.tile.setBlack()
         first.next = null
     }
-    moveUp() {
-        var moveStatus = this.checkSafeMove(this.head.x - 1, this.head.y)
-        if (moveStatus != MoveStatus.GOOD)
-            return moveStatus
-        var temp = this.head
-        this.head = new BoxNode(gameBoard[temp.x - 1][temp.y], temp.x - 1, temp.y)
-        this.head.next = temp
-        this.head.setWhite()
-        return moveStatus
-    }
-    moveDown() {
-        var moveStatus = this.checkSafeMove(this.head.x + 1, this.head.y)
-        if (moveStatus != MoveStatus.GOOD)
-            return moveStatus
-        var temp = this.head
-        this.head = new BoxNode(gameBoard[temp.x + 1][temp.y], temp.x + 1, temp.y)
-        this.head.next = temp
-        this.head.setWhite()
-        return moveStatus
-    }
-    moveLeft() {
-        var moveStatus = this.checkSafeMove(this.head.x, this.head.y - 1)
-        if (moveStatus != MoveStatus.GOOD)
-            return moveStatus
-        var temp = this.head
-        this.head = new BoxNode(gameBoard[temp.x][temp.y - 1], temp.x, temp.y - 1)
-        this.head.next = temp
-        this.head.setWhite()
-        return moveStatus
-    }
-    moveRight() {
-        var moveStatus = this.checkSafeMove(this.head.x, this.head.y + 1)
-        if (moveStatus != MoveStatus.GOOD)
-            return moveStatus
-        var temp = this.head
-        this.head = new BoxNode(gameBoard[temp.x][temp.y + 1], temp.x, temp.y + 1)
-        this.head.next = temp
-        this.head.setWhite()
-        return moveStatus
-    }
-}
-
-function createGrid(gameDiv, columns, rows) {
-    var blockSize = '10px '
-
-    // set column and row css values
-    gameDiv.css('grid-template-columns', blockSize.repeat(columns).trim())
-    gameDiv.css('grid-template-rows', blockSize.repeat(rows).trim())
-    
-    var rowsArr = []
-    for (var i = 0; i < rows; i++) {
-        var cols = []
-        for (var j = 0; j < columns; j++) {
-            var box = $('<div></div>')
-            //new BoxNode(box, i, j)
-            cols.push(box)
-            gameDiv.append(box)
+    advance(direction) {
+        var newX, newY;
+        switch (direction) {
+            case 'U':
+                newX = this.head.x - 1
+                newY = this.head.y
+                break;
+            case 'D':
+                newX = this.head.x + 1
+                newY = this.head.y
+                break;
+            case 'L':
+                newX = this.head.x
+                newY = this.head.y - 1
+                break;
+            case 'R':
+                newX = this.head.x
+                newY = this.head.y + 1
+                break;
+            default:
+                break;
         }
-        rowsArr.push(cols)
+        var temp = this.head
+        this.head = new BoxNode(gameBoard[newX][newY])
+        this.head.next = temp
+        this.head.tile.setWhite()
     }
-    return rowsArr
-}
+    advanceUp() {
+        this.advance('U')
+    }
+    advanceDown() {
+        this.advance('D')
+    }
+    advanceLeft() {
+        this.advance('L')
+    }
+    advanceRight() {
+        this.advance('R')
+    }
 
-function setBoxColor(row, column, color) {
-    gameBoard[row][column].css('background-color', color)
-}
-
-function getColor(row, column) {
-    var color = gameBoard[row][column].css('background-color')
-    return colorNames[color]
+    /**
+     * Change the color of the entire snake.
+     * @param {string} color color to change snake to
+     */
+    changeSnakeColor(color) {
+        var n = this.head
+        while (n != null) {
+            n.tile.setColor(colorCodes[color])
+            n = n.next
+        }
+    }
 }
 
 function resetBoard() {
     for (var i = 0; i < gameBoard.length; i++)
         for (var j = 0; j < gameBoard[i].length; j++)
-            gameBoard[i][j].reset()
+            gameBoard[i][j].setBlack()
 }
 
 async function playGame() {
     // board size 6 by 17
+    // you need to check if the move you do is safe
+    // before you actually do the move
+    await GameUtils.boardWipe(gameBoard, 100, 6)
     var snake = new Snake(2, 4)
-    
+    var moves = [0, 1, 2, 3]
+    while (true) {
+        while (true) {
+            var tempMvs = [...moves]
+            var moveDir = GameUtils.rngChoice(tempMvs)
+            var nextMoveGood = checkMove(snake, moveDir)
+            while (nextMoveGood != MoveStatus.GOOD) {
+                if (tempMvs.length < 1)
+                    break
+                tempMvs.splice(tempMvs.indexOf(moveDir), 1)
+                moveDir = GameUtils.rngChoice(tempMvs)
+                nextMoveGood = checkMove(snake, moveDir)
+            }
+            if (tempMvs.length < 1)
+                break
+            doMove(snake, moveDir)
+
+            var r = GameUtils.rng(7)
+            if (r != 0)
+                snake.removeTail()
+
+            await sleep(900)
+        }
+
+        await sleep(1500)
+        for (var i = 0; i < 2; i++) {
+            snake.changeSnakeColor(color.RED)
+            await sleep(500)
+            snake.changeSnakeColor(color.WHITE)
+            await sleep(500)
+        }
+        await GameUtils.boardWipe(gameBoard, 100, 8)
+        snake = new Snake(GameUtils.rng(gameBoard.length), GameUtils.rng(gameBoard[0].length))
+    }
+}
+
+/**
+ * 
+ * @param {Snake} snake 
+ * @param {number} dir 
+ */
+function doMove(snake, dir) {
+    switch (dir) {
+        case 0:
+            snake.advanceUp()
+            break;
+        case 1:
+            snake.advanceDown()
+            break;
+        case 2:
+            snake.advanceLeft()
+            break;
+        case 3:
+            snake.advanceRight()
+            break;
+        default:
+            break;
+    }
+}
+
+/**
+ * 
+ * @param {Snake} snake 
+ * @param {number} dir 
+ * @returns 
+ */
+function checkMove(snake, dir) {
+    switch (dir) {
+        case 0:
+            return snake.checkUp()
+        case 1:
+            return snake.checkDown()
+        case 2:
+            return snake.checkLeft()
+        case 3:
+            return snake.checkRight()
+        default:
+            return ''
+    }
 }
