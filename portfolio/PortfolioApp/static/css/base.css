@@ -6,6 +6,8 @@ html {
 body {
   margin: 0;
   font-size: 12px;
+  font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif;
 }
 
 #base-content-wrapper,
@@ -78,7 +80,7 @@ header {
   border: none;
   display: flex;
   background: black;
-  padding: .8% 0;
+  padding: 0.8% 0;
   width: 100%;
   background: black;
 }
@@ -115,7 +117,7 @@ footer {
   color: #dbdbdb;
   font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 100;
 }
 
@@ -185,6 +187,42 @@ footer img:hover {
   background-color: black;
 }
 
+/* Mobile settings */
+#mobile-header {
+  padding: 1.5em;
+}
+
+.mobile-nav {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  float: left;
+  height: 100%;
+}
+
+.mobile-nav ul {
+  list-style-type: none;
+  height: 100%;
+  padding-top: 5em;
+  padding-left: 5em;
+}
+
+.mobile-nav ul li {
+  display: none;
+  padding-bottom: 2rem;
+}
+
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.mobile-menu-opened > *:not(#mobile-header) > *:not(.mobile-nav) {
+  transition: filter 0.9s;
+    filter: blur(7px);
+}
+
 @media all and (min-width: 501px) {
   header {
     display: block;
@@ -211,12 +249,6 @@ footer img:hover {
 
 @media all and (max-width: 890px) {
   #snake-game {
-    display: none;
-  }
-}
-
-@media all and (min-width: 891px) {
-  #snake-game {
-    display: inline-grid;
+    visibility: hidden;
   }
 }

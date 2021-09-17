@@ -3,13 +3,17 @@ var boardMaxX = NaN
 var boardMaxY = NaN
 
 $(document).ready(() => {
-    const hamburger = $(".hamburger-menu");
-
+    const hamburger = $("#hamburger-menu")
     hamburger.on("click", () => {
-        hamburger.toggleClass("active")
+        $(hamburger).toggleClass('hamburger-opened')
+        if ($(hamburger).hasClass('hamburger-opened'))
+            mobileNavToggleOn()
+        else
+            mobileNavToggleOff()
     });
 
-    // fadeInPage()
+    if ($('header').css('display') != 'none')
+        fadeInPageDesktop()
 
     var numOfColumns = 17;
     var numOfRows = 6;
@@ -19,7 +23,32 @@ $(document).ready(() => {
     // playGame()
 })
 
-async function fadeInPage() {
+async function mobileNavToggleOn() {
+    $('body > *:not(#mobile-header) > *:not(.mobile-nav)').css('filter', 'blur(7px)')
+    await sleep(100)
+    $('.mobile-nav').toggle()
+    $('.mobile-nav ul li:nth-child(1)').toggle('slow', 'swing')
+    await sleep(100)
+    $('.mobile-nav ul li:nth-child(2)').toggle('slow', 'swing')
+    await sleep(100)
+    $('.mobile-nav ul li:nth-child(3)').toggle('slow', 'swing')
+}
+
+async function mobileNavToggleOff() {
+    $('.mobile-nav ul li:nth-child(3)').toggle('slow', 'swing')
+    await sleep(100)
+    $('.mobile-nav ul li:nth-child(2)').toggle('slow', 'swing')
+    await sleep(100)
+    $('.mobile-nav ul li:nth-child(1)').toggle('slow', 'swing')
+    
+    while ($('.mobile-nav ul li:nth-child(1)').css('display') != 'none')
+        await sleep(10)
+
+    $('.mobile-nav').toggle()
+    $('body > *:not(#mobile-header) > *:not(.mobile-nav)').css('filter', 'none')
+}
+
+async function fadeInPageDesktop() {
     $('header').css('opacity', '0')
     $('.header-wrapper').css('opacity', '0')
     $('.footer-column').css('opacity', '0')
