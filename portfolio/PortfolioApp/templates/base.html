@@ -5,6 +5,20 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @font-face {
+                font-family: "AstroFace";
+                src: url("{% static 'fonts/AstroSpace.ttf' %}");
+            }
+            @font-face {
+                font-family: "Atmospheric";
+                src: url("{% static 'fonts/Atmospheric.ttf' %}");
+            }
+            @font-face {
+                font-family: "RocketRinder";
+                src: url("{% static 'fonts/RocketRinder.ttf' %}");
+            }
+        </style>
         <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="{% static 'css/hamburgers.css' %}">
@@ -19,14 +33,14 @@
         <div id="mobile-header">
             <div id="hamburger-menu">
                 <svg width="27" height="27" viewBox="0 0 100 100">
-                  <path class="hamburger-line hamburger-line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
-                  <path class="hamburger-line hamburger-line2" d="M 20,50 H 80" />
-                  <path class="hamburger-line hamburger-line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                    <path class="hamburger-line hamburger-line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                    <path class="hamburger-line hamburger-line2" d="M 20,50 H 80" />
+                    <path class="hamburger-line hamburger-line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
                 </svg>
             </div>
         </div>
         <div>
-            <nav class="mobile-nav">
+            <nav class="mobile-nav" style="display: none; opacity: 0;">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Experience</a></li>
@@ -48,16 +62,11 @@
                 </nav>
             </div>
         </header>
-        <div id="base-content-wrapper">
-            {% block content %}{% endblock %}
-        </div>
-        <br>
-        <br>
-        <br>
+        {% block content %}{% endblock %}
         <footer>
             <div class="footer-column"><div id="snake-game"></div></div>
-            <div class="footer-column"><ul><li>Website designed and developed by
-                        Ryan Bender</li></ul></div>
+            <div class="footer-column"><span class="verse">My verse</span><span>Website designed and developed by
+                        Ryan Bender</span></div>
             <div class="footer-column"><ul>
                     <li><img src="{% static 'images/github.svg' %}"
                             title="GitHub"

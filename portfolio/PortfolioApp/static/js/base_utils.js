@@ -73,6 +73,7 @@ class GameUtils {
   static rng(max) {
     return Math.floor(Math.random() * max);
   }
+  
   /**
    * Pick a random item in list.
    * @param {Array} arr

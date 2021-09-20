@@ -2,9 +2,14 @@ var gameBoard = null;
 var boardMaxX = NaN
 var boardMaxY = NaN
 
+var mobileNavAnimating = false
+
 $(document).ready(() => {
     const hamburger = $("#hamburger-menu")
     hamburger.on("click", () => {
+        if (mobileNavAnimating)
+            return false
+        mobileNavAnimating = true
         $(hamburger).toggleClass('hamburger-opened')
         if ($(hamburger).hasClass('hamburger-opened'))
             mobileNavToggleOn()
@@ -12,8 +17,8 @@ $(document).ready(() => {
             mobileNavToggleOff()
     });
 
-    if ($('header').css('display') != 'none')
-        fadeInPageDesktop()
+    // if ($('header').css('display') != 'none')
+    //     fadeInPageDesktop()
 
     var numOfColumns = 17;
     var numOfRows = 6;
@@ -24,28 +29,36 @@ $(document).ready(() => {
 })
 
 async function mobileNavToggleOn() {
-    $('body > *:not(#mobile-header) > *:not(.mobile-nav)').css('filter', 'blur(7px)')
-    await sleep(100)
-    $('.mobile-nav').toggle()
-    $('.mobile-nav ul li:nth-child(1)').toggle('slow', 'swing')
-    await sleep(100)
-    $('.mobile-nav ul li:nth-child(2)').toggle('slow', 'swing')
-    await sleep(100)
-    $('.mobile-nav ul li:nth-child(3)').toggle('slow', 'swing')
+    $('.mobile-nav').css('display', 'block')
+    $('.mobile-nav').animate({
+        opacity: '1'
+    }, 350, 'linear')
+
+    await sleep(150)
+    for (var i = 1; i < 4; i++) {
+        $(`.mobile-nav ul li:nth-child(${i})`).toggle('slow', 'swing')
+        await sleep(70)
+    }
+
+    await sleep(200)
+    mobileNavAnimating = false
 }
 
 async function mobileNavToggleOff() {
-    $('.mobile-nav ul li:nth-child(3)').toggle('slow', 'swing')
-    await sleep(100)
-    $('.mobile-nav ul li:nth-child(2)').toggle('slow', 'swing')
-    await sleep(100)
-    $('.mobile-nav ul li:nth-child(1)').toggle('slow', 'swing')
+    for (var i = 3; i > 0; i--) {
+        $(`.mobile-nav ul li:nth-child(${i})`).toggle('slow', 'swing')
+        await sleep(70)
+    }
     
     while ($('.mobile-nav ul li:nth-child(1)').css('display') != 'none')
         await sleep(10)
 
-    $('.mobile-nav').toggle()
-    $('body > *:not(#mobile-header) > *:not(.mobile-nav)').css('filter', 'none')
+    $('.mobile-nav').animate({
+        opacity: '0'
+    }, 200, 'linear', () => $('.mobile-nav').css('display', 'none'))
+    
+    await sleep(200)
+    mobileNavAnimating = false
 }
 
 async function fadeInPageDesktop() {

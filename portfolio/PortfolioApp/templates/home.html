@@ -5,22 +5,30 @@
 {% endblock %}
 
 {% block content %}
-<h1>Header 1</h1>
-<p>Est consectetur labore quis eu et ut veniam labore in veniam eu minim. Dolore
-    duis dolor nulla in. Sunt do aliqua proident fugiat ea nisi reprehenderit
-    deserunt dolore non adipisicing qui. Aliqua officia qui nulla mollit aliqua
-    quis est adipisicing cillum. Incididunt dolor sit enim incididunt
-    exercitation deserunt mollit duis. Ut veniam dolor ipsum in commodo quis
-    magna minim do consectetur velit sit. Pariatur excepteur qui et enim.
-    Ullamco sit ex nisi non sunt aliquip. Lorem dolor ad incididunt do elit
-    minim ea eu reprehenderit mollit eu ut. Consectetur enim magna ut minim
-    culpa id commodo et proident ut irure anim. Laborum mollit dolor qui ipsum
-    in labore mollit. Est culpa eu adipisicing sint sit laborum. Magna laborum
-    esse esse cillum anim aliqua pariatur esse eiusmod aute elit. Anim mollit
-    pariatur excepteur adipisicing cupidatat aute.</p>
-<p>Lorem duis dolore cillum cupidatat officia irure cillum occaecat sit. Ex
-    consequat est anim irure ad sunt ea sint est ad id. Amet consequat
-    exercitation nostrud pariatur irure pariatur anim minim aute. Commodo tempor
-    aliqua ullamco labore dolor Lorem duis labore do cupidatat. Cillum velit
-    excepteur labore fugiat elit elit.</p>
+<section id="section1">
+    <img src="{% static 'images/home_pic.png' %}" alt="Ryan">
+    <div class="heading-text">
+        <div style="font-size: 3.8rem;">Ryan Bender</div>
+        <div style="font-size: 2.7rem;">Full-Stack Developer</div>
+    </div>
+    <h1>Contact Info</h1>
+    <ul>
+        <div><span class="info-title">Number:</span><span>(540) 423-2187</span></div>
+        <div><span class="info-title">Email:</span><span>ryan.bender.general@gmail.com</span></div>
+        <div><span class="info-title"></span><span></span></div>
+        <div><span class="info-title"></span><span></span></div>
+    </ul>
+    
+</section>
+<div class="spacer" style="background-image: url({% static 'images/s1-to-s2.svg' %});"></div>
+<section id="section2">
+    <h1>Information</h1>
+    <ul>
+        <div><span class="info-title">Age:</span><span>23</span></div>
+        <div><span class="info-title">Years Of Experience:</span><span>2</span></div>
+        <div><span class="info-title"></span><span></span></div>
+        <div><span class="info-title"></span><span></span></div>
+    </ul>
+</section>
+<div class="spacer" style="background-image: url({% static 'images/s2-to-footer.svg' %});"></div>
 {% endblock %}
