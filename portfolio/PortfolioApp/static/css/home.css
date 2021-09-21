@@ -1,73 +1,208 @@
 :root {
-    --accent: #6a00f4;
-    --accent-1: #8900f2;
-    --grey: #dbdbdb;
+  --palatte1-1: #10002b;
+  --palatte1-2: #240046;
+  --palatte1-3: #3c096c;
+  --palatte1-4: #5a189a;
+  --palatte1-5: #7b2cbf;
+  --palatte1-6: #9d4edd;
+  --palatte1-7: #c77dff;
+  --palatte1-8: #e0aaff;
 }
 
 section {
-    font-size: 12px;
-}
-
-#section1 {
-    padding-left: 8%;
-    padding-right: 8%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: var(--grey);
-}
-
-h1 {
-    font-size: 1.9rem;
-    color: var(--accent);
-    font-family: "Atmospheric";
-}
-
-#section1 img {
-    width: 50%;
-    padding-bottom: 2%;
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    font-size: 1.8rem;
-    color: rgb(245, 245, 245);
-    font-family: "AstroFace";
-}
-
-.info-title {
-    padding-right: 3em;
-    font-size: 1.7rem;
-    font-family: "AstroFace";
-    color: rgb(180, 180, 180);
-}
-
-.heading-text {
-    font-family: Roboto Mono, monospace;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 3em;
-}
-
-.heading-text > :first-child {
-    color: #ffffff;
-    font-weight: bold;
-}
-
-#section2 {
-    padding: 1% 8% 0% 8%;
-    background: #002855;
-    color: #e8f3fd;
+  font-size: 30px; /* main font size */
+  padding: 0;
+  margin: 0 auto;
 }
 
 .spacer {
-    aspect-ratio: 960/100;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  aspect-ratio: 960/100;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Header section */
+
+#first-section .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* font-family: Roboto Mono, monospace; */
+}
+
+#first-section h1 {
+  font-family: Roboto Mono, monospace;
+  padding: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.7em;
+  margin: 0.3em 0;
+}
+
+#first-section h2 {
+  padding: 0;
+  margin: 0;
+  color: rgb(216, 216, 216);
+  font-size: 1.1em;
+  font-family: "TimeburnerBold";
+}
+
+#main-home-pic {
+  max-width: 670px;
+  width: 75vw;
+}
+
+/* Second section | Contact Information */
+
+#contact-info-section .inner {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 1vh 8%;
+  max-width: var(--max-width);
+}
+
+#contact-info-section h1 {
+  color: var(--palatte1-5);
+  font-size: 0.9em;
+  font-family: "Atmospheric";
+}
+
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info-list li {
+  display: flex;
+  padding: 0 0 1vh 0;
+  gap: 4vw;
+}
+
+.contact-info-list h2 {
+  margin: 0;
+  font-size: 0.75em;
+  font-family: "AstroFace";
+  color: rgb(180, 180, 180);
+}
+
+.contact-info-list a {
+  text-decoration: none;
+  font-size: 0.69em;
+  color: rgb(245, 245, 245);
+  font-family: "AstroFace";
+}
+
+.contact-info-list a:hover {
+  transition: color 0.4s;
+  color: rgb(167, 167, 167);
+}
+
+/* Third section | Summary */
+
+#summary-section {
+  background-color: var(--palatte1-1);
+}
+
+#summary-section .inner {
+  color: white;
+  padding: 1vh 8%;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+#summary-section h1 {
+  color: var(--palatte1-8);
+  font-size: 0.75em;
+  font-family: "Atmospheric";
+}
+
+#summary-section p {
+  font-size: 0.7em;
+  font-family: "Timeburner";
+}
+
+/* Forth Section | Stats */
+
+#stats-section {
+    background: var(--palatte1-5);
+}
+
+#stats-section .inner {
+  padding: 1vh 8%;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+#stats-section h1 {
+  color: var(--palatte1-8);
+  font-size: 0.75em;
+  font-family: "Atmospheric";
+}
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-list li {
+  display: flex;
+  padding: 0 0 1vh 0;
+  gap: 4vw;
+}
+
+.stats-list h2 {
+  margin: 0;
+  font-size: 0.71em;
+  font-family: "AstroFace";
+  color: rgb(207, 207, 207);
+}
+
+.stats-list span {
+  text-decoration: none;
+  font-size: 0.85em;
+  color: rgb(245, 245, 245);
+  font-family: "AstroFace";
+}
+
+@media (max-width: 900px) {
+  section {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 500px) {
+  section {
+    font-size: 20px;
+  }
+}
+
+/* iPhone */
+@media (max-width: 400px) {
+  section {
+    font-size: 18px;
+  }
 }

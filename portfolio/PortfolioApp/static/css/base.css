@@ -1,3 +1,7 @@
+:root {
+  --max-width: 1100px;
+}
+
 html {
   background: black;
   margin: 0;
@@ -9,6 +13,29 @@ body {
   font-size: 12px;
   font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2b2b2b;
+  
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(199, 199, 199);
+  border-radius: 20px;
+  border: 2px solid rgb(158, 158, 158);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .hover-underline-animation {
@@ -100,14 +127,14 @@ header {
 }
 
 footer {
-  max-width: 1100px;
+  max-width: var(--max-width);
   margin: 0 auto;
   color: #dbdbdb;
   font-family: "SF Pro Text", "Myriad Set Pro", "SF Pro Icons", "Helvetica Neue",
     "Helvetica", "Arial", sans-serif;
   font-size: 0.75rem;
   font-weight: 100;
-  padding: 2% 8% 8.5% 8%;
+  padding: 0 8%;
 }
 
 footer ul {
@@ -121,7 +148,7 @@ footer ul {
 
 .footer-column {
   float: left;
-  height: 4rem;
+  height: 6rem;
 }
 
 .footer-column:nth-child(2) {
@@ -144,11 +171,11 @@ footer ul {
 }
 
 .footer-column:nth-child(3) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: right;
-    gap: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+  gap: 10%;
 }
 
 .fill-white {

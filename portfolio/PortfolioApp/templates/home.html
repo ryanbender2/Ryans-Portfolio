@@ -2,33 +2,45 @@
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
+<script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
 
 {% block content %}
-<section id="section1">
-    <img src="{% static 'images/home_pic.png' %}" alt="Ryan">
-    <div class="heading-text">
-        <div style="font-size: 3.8rem;">Ryan Bender</div>
-        <div style="font-size: 2.7rem;">Full-Stack Developer</div>
+<section id="first-section">
+    <div class="inner">
+        <img id="main-home-pic" src="{% static 'images/home_pic.png' %}" alt="Ryan">
+        <h1>Ryan Bender</h1>
+        <h2>Full-Stack Developer</h2>
     </div>
-    <h1>Contact Info</h1>
-    <ul>
-        <div><span class="info-title">Number:</span><span>(540) 423-2187</span></div>
-        <div><span class="info-title">Email:</span><span>ryan.bender.general@gmail.com</span></div>
-        <div><span class="info-title"></span><span></span></div>
-        <div><span class="info-title"></span><span></span></div>
-    </ul>
-    
+</section>
+<section id="contact-info-section">
+    <div class="inner">
+        <h1>Contact Information</h1>
+        <ul class="contact-info-list">
+            <li>
+                <h2>Phone #:</h2>
+                <a href="tel: 5404232187">(540) 423-2187</a>
+            </li>
+            <li>
+                <h2>Email:</h2>
+                <a href="mailto: ryan.bender.general@gmail.com">ryan.bender.general@gmail.com</a>
+            </li>
+        </ul>
+    </div>
 </section>
 <div class="spacer" style="background-image: url({% static 'images/s1-to-s2.svg' %});"></div>
-<section id="section2">
-    <h1>Information</h1>
-    <ul>
-        <div><span class="info-title">Age:</span><span>23</span></div>
-        <div><span class="info-title">Years Of Experience:</span><span>2</span></div>
-        <div><span class="info-title"></span><span></span></div>
-        <div><span class="info-title"></span><span></span></div>
-    </ul>
+<section id="summary-section">
+    <div class="inner">
+        <h1>Summary</h1>
+        <p>Ipsum anim excepteur minim esse laborum. Nulla dolore deserunt dolor do laboris aliquip proident ut dolore est dolor consequat. Mollit dolor minim minim ea ut in excepteur. Ea enim elit non proident dolore.</p>
+    </div>
 </section>
-<div class="spacer" style="background-image: url({% static 'images/s2-to-footer.svg' %});"></div>
+<div class="spacer" style="background-image: url({% static 'images/s3-to-s4.svg' %});"></div>
+<section id="stats-section">
+    <div class="inner">
+        <h1>Stats</h1>
+        <ul class="stats-list"></ul>
+    </div>
+</section>
+<div class="spacer" style="background-image: url({% static 'images/s4-to-footer.svg' %});"></div>
 {% endblock %}

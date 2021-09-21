@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="section1">
+    <img src="{% static 'images/home_pic.png' %}" alt="Ryan">
+    <div class="heading-text">
+        <div>Ryan Bender</div>
+        <div>Full-Stack Developer</div>
+    </div>
+    <h1>Contact Info</h1>
+    <ul>
+        <div><span class="info-title">Number:</span><span>(540) 423-2187</span></div>
+        <div><span class="info-title">Email:</span><span>ryan.bender.general@gmail.com</span></div>
+        <div><span class="info-title"></span><span></span></div>
+        <div><span class="info-title"></span><span></span></div>
+    </ul>
+    
+</section>
+<div class="spacer" style="background-image: url({% static 'images/s1-to-s2.svg' %});"></div>
+<section id="section2">
+    <div class="content">
+        <h1>Information</h1>
+        <ul>
+            <div><span class="info-title">Age:</span><span>23</span></div>
+            <div><span class="info-title">Years Of Experience:</span><span>2</span></div>
+            <div><span class="info-title"></span><span></span></div>
+            <div><span class="info-title"></span><span></span></div>
+        </ul>
+    </div>
+</section>
+<div class="spacer" style="background-image: url({% static 'images/s2-to-footer.svg' %});"></div>
+{% endblock %}
