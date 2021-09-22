@@ -79,6 +79,7 @@ section {
 
 .contact-info-list li {
   display: flex;
+  flex-wrap: wrap;
   padding: 0 0 1vh 0;
   gap: 4vw;
 }
