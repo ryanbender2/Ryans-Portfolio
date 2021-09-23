@@ -5,6 +5,8 @@ var boardMaxY = NaN
 var mobileNavAnimating = false
 
 $(document).ready(() => {
+    setDesktopHeaderLookandFeel()
+
     const hamburger = $("#hamburger-menu")
     hamburger.on("click", () => {
         if (mobileNavAnimating)
@@ -77,6 +79,37 @@ async function fadeInPageDesktop() {
     await sleep(500)
     $('.footer-column:nth-last-of-type(1)').fadeTo(1000, 1)
     $('.footer-column:nth-last-of-type(3)').fadeTo(2000, 1)
+}
+
+/**
+ * Set the functionality for the desktop header.
+ * 
+ * 1. scroll behavior
+ * 2. background blur behavior
+ */
+function setDesktopHeaderLookandFeel() {
+    var header = $('header')
+    var nav = $('header a')
+    var alreadyLeft = false
+
+    // nav.css('transition', 'color 1s ease')
+    
+    // $(window).scroll(function() {
+    //     if ($(this).scrollTop() == 0) {
+    //         // returned to top of page
+    //         alreadyLeft = false
+
+    //         header.css('background-image', 'none')
+    //         nav.css('color', '#dbdbdb')
+    //     } else if ($(this).scrollTop() != 0 && !alreadyLeft) {
+    //         // left top of page
+    //         alreadyLeft = true
+
+    //         header.css('background-image', 'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4990371148459384) 11%, rgba(255,255,255,0.7) 100%)')
+            
+    //         nav.css('color', '#3d3d3d')
+    //     }
+    // })
 }
 
 function createGrid(gameDiv, columns, rows) {
