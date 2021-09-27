@@ -1,11 +1,20 @@
 :root {
   --max-width: 1100px;
+  --palatte1-1: #10002b;
+  --palatte1-2: #240046;
+  --palatte1-3: #3c096c;
+  --palatte1-4: #5a189a;
+  --palatte1-5: #7b2cbf;
+  --palatte1-6: #9d4edd;
+  --palatte1-7: #c77dff;
+  --palatte1-8: #e0aaff;
 }
 
 html {
   background: black;
   margin: 0;
   scroll-behavior: smooth;
+  min-width: 300px;
 }
 
 body {
@@ -64,20 +73,29 @@ body {
   transition: color 0.3s;
 }
 
+/* separate div to assist with blur effect */
+.header-background {
+    height: 1.1em;
+    width: 100%;
+    padding: 0.5em 0;
+    position: absolute;
+    transition: opacity 400ms;
+}
+
+.header-background0 {
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(36,0,70,1) 4%, rgba(36,0,70,1) 100%);
+    opacity: 1;
+}
+
+.header-background1 {
+    background: linear-gradient(0deg, rgba(157,78,221,0) 0%, rgba(157,78,221,0.43) 4%, rgba(157,78,221,0.6) 100%);
+    backdrop-filter: blur(7px);
+    opacity: 0;
+}
+
 header {
-  --palatte1-1: #10002b;
-  --palatte1-2: #240046;
-  --palatte1-3: #3c096c;
-  --palatte1-4: #5a189a;
-  --palatte1-5: #7b2cbf;
-  --palatte1-6: #9d4edd;
-  --palatte1-7: #c77dff;
-  --palatte1-8: #e0aaff;
-  padding: 0.5em 0;
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(7px);
-  background-color: #7b2cbf;
 }
 
 header nav {
@@ -85,6 +103,7 @@ header nav {
   align-items: center;
   justify-content: center;
   gap: 2.5vw;
+  padding: 0.5em 0;
 }
 
 header a {
@@ -243,7 +262,7 @@ footer img:hover {
 @media (max-width: 500px) {
   header,
   footer,
-  #mobile-header {
+  #header-spacer {
     display: none;
   }
   #mobile-header {

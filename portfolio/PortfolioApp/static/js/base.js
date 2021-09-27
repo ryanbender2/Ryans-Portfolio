@@ -6,18 +6,7 @@ var mobileNavAnimating = false
 
 $(document).ready(() => {
     setDesktopHeaderLookandFeel()
-
-    const hamburger = $("#hamburger-menu")
-    hamburger.on("click", () => {
-        if (mobileNavAnimating)
-            return false
-        mobileNavAnimating = true
-        $(hamburger).toggleClass('hamburger-opened')
-        if ($(hamburger).hasClass('hamburger-opened'))
-            mobileNavToggleOn()
-        else
-            mobileNavToggleOff()
-    });
+    setMobileHeader()
 
     // if ($('header').css('display') != 'none')
     //     fadeInPageDesktop()
@@ -29,6 +18,20 @@ $(document).ready(() => {
     boardMaxY = gameBoard[0].length
     // playGame()
 })
+
+async function setMobileHeader() {
+    const hamburger = $("#hamburger-menu")
+    hamburger.on("click", () => {
+        if (mobileNavAnimating)
+            return false
+        mobileNavAnimating = true
+        $(hamburger).toggleClass('hamburger-opened')
+        if ($(hamburger).hasClass('hamburger-opened'))
+            mobileNavToggleOn()
+        else
+            mobileNavToggleOff()
+    });
+}
 
 async function mobileNavToggleOn() {
     $('.mobile-nav').css('display', 'block')
@@ -88,28 +91,25 @@ async function fadeInPageDesktop() {
  * 2. background blur behavior
  */
 function setDesktopHeaderLookandFeel() {
-    var header = $('header')
-    var nav = $('header a')
+    var headerBackground0 = $('.header-background0')
+    var headerBackground1 = $('.header-background1')
     var alreadyLeft = false
-
-    // nav.css('transition', 'color 1s ease')
     
-    // $(window).scroll(function() {
-    //     if ($(this).scrollTop() == 0) {
-    //         // returned to top of page
-    //         alreadyLeft = false
-
-    //         header.css('background-image', 'none')
-    //         nav.css('color', '#dbdbdb')
-    //     } else if ($(this).scrollTop() != 0 && !alreadyLeft) {
-    //         // left top of page
-    //         alreadyLeft = true
-
-    //         header.css('background-image', 'linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4990371148459384) 11%, rgba(255,255,255,0.7) 100%)')
-            
-    //         nav.css('color', '#3d3d3d')
-    //     }
-    // })
+    $(window).scroll(function() {
+        if ($(this).scrollTop() == 0) {
+            // returned to top of page
+            alreadyLeft = false
+    
+            headerBackground1.css('opacity', '0')
+            headerBackground0.css('opacity', '1')
+        } else if ($(this).scrollTop() != 0 && !alreadyLeft) {
+            // left top of page
+            alreadyLeft = true
+    
+            headerBackground1.css('opacity', '1')
+            headerBackground0.css('opacity', '0')
+        }
+    })
 }
 
 function createGrid(gameDiv, columns, rows) {
