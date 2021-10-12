@@ -1,10 +1,10 @@
 {
     "name": "express-typescript-starter",
     "version": "0.1.0",
-    "description": "A starting point for Node.js express apps with TypeScript",
+    "description": "Ryan Bender's Portfolio",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/ryanbender2/Ryans-Portfolio"
     },
     "author": "Ryan Bender",
     "license": "MIT",
@@ -76,7 +76,6 @@
         "@types/shelljs": "0.8.8",
         "@types/snapsvg": "^0.5.1",
         "@types/supertest": "2.0.10",
-        "@types/winston": "2.4.4",
         "@typescript-eslint/eslint-plugin": "4.14.2",
         "@typescript-eslint/parser": "4.14.2",
         "chai": "4.3.0",
