@@ -10,6 +10,15 @@ section {
   background-position: center;
   background-size: cover;
 }
+
+#blob {
+    background-color: var(--palatte1-6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 #first-section {
   padding: 0.5em 5px;
   .inner {

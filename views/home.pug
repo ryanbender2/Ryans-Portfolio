@@ -4,10 +4,15 @@ block title
     title Home Page
 
 block head
-    link(rel="stylesheet", href="css/home.css")
+    link(rel="stylesheet" href="css/home.css")
     script(src='js/home.js')
+    script(src='js/blob_animate.js')
 
 block content
+    section#blob
+        // using Snap.svg to animate
+        svg#blob-thing(viewbox='0 0 960 450' width='960' height='450' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1')
+
     section#first-section
         .inner
             img#main-home-pic(src="images/home_pic.png" alt='Ryan')

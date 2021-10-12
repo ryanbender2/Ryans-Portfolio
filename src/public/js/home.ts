@@ -26,3 +26,4 @@ async function populateStats(stats: string[][]) {
         statsList.append(item)
     })
 }
+

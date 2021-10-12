@@ -16,7 +16,7 @@ $(() => {
     gameBoard = createGrid($('#snake-game'), numOfColumns, numOfRows)
     boardMaxX = gameBoard.length
     boardMaxY = gameBoard[0].length
-    playGame()
+    // playGame()
 })
 
 async function setMobileHeader(): Promise<void> {

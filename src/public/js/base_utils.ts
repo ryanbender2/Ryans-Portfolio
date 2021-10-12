@@ -92,6 +92,17 @@ class GameUtils {
     }
 
     /**
+     * Get a random number inbetween min and max.
+     * 
+     * @param min min
+     * @param max max
+     * @returns random number
+     */
+    static rngRange(min: number, max: number): number {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    /**
      * Pick a random item in list.
      * @param {Array} arr
      */
