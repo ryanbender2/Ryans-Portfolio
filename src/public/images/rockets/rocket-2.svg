@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<svg
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://web.resource.org/cc/"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    viewBox="0 0 300 1050"
+  >
+  <desc
+    >USA Rocket
+    Can be inserted into an SVG image then scaled and positioned where desired.
+    From the book, A New Day, illustrated by Jay Nick.
+    A New Day is available as an eBook from cattocreations.com
+    Written by Jay Nick
+    Handcoding SVG since 2001
+    Author of eBook, Learn SVG Interactively, published by Catto Creations, LLC
+    http://www.jaynick.com
+    A New Day is published by Catto Creations, LLC
+    Catto Creations mission is Family, Literacy, and Enrichment
+    Visit http://www.cattocreations.com for award winning children's eBooks
+    A New Day and other free ePub3 eBooks at http://www.cattocreations.com/ePub3.html</desc
+  >
+  <defs
+    >
+    <linearGradient
+        id="shadow"
+      >
+      <stop
+          stop-color="#fff"
+          offset=".4"
+      />
+      <stop
+          stop-color="#ccc"
+          offset=".8"
+      />
+      <stop
+          stop-color="#999"
+          offset="1"
+      />
+    </linearGradient
+    >
+    <style
+        type="text/css"
+      >#rocket {fill:url(#shadow);stroke:black;stroke-width:5px;}
+      .window {fill:blue;stroke:black;stroke-width:5px;}
+      .logo {fill:red;stroke:blue;stroke-width:2px;text-anchor:middle;font-family:Arial;font-size:50px;font-weight:bold;}
+      .nozzle {fill:black;stroke:none;}
+      .flame {fill:red;stroke:orange;stroke-width:6px;}</style
+    >
+  </defs
+  >
+  <g
+      id="rocket"
+      transform="translate(0) scale(1)"
+    >
+    <g
+        transform="translate(150,450)"
+      >
+      <rect
+          y="-250"
+          x="-100"
+          width="200"
+          height="300"
+      />
+      <path
+          d="m-100 50l-25 75v375h250v-375l-25-75z"
+      />
+      <g
+          transform="translate(0)"
+        >
+        <path
+            d="m-125 545l-15 45 20-10 10 10 20-10 25 10-10-45z"
+            class="flame"
+        />
+        <path
+            d="m-125 500l-5 50h60l-5-50z"
+            class="nozzle"
+        />
+      </g
+      >
+      <g
+          transform="translate(66)"
+        >
+        <path
+            d="m-125 545l-15 45 20-10 10 10 20-10 25 10-10-45z"
+            class="flame"
+        />
+        <path
+            d="m-125 500l-5 50h60l-5-50z"
+            class="nozzle"
+        />
+      </g
+      >
+      <g
+          transform="translate(134)"
+        >
+        <path
+            d="m-125 545l-15 45 20-10 10 10 20-10 25 10-10-45z"
+            class="flame"
+        />
+        <path
+            d="m-125 500l-5 50h60l-5-50z"
+            class="nozzle"
+        />
+      </g
+      >
+      <g
+          transform="translate(200)"
+        >
+        <path
+            d="m-125 545l-15 45 20-10 10 10 20-10 25 10-10-45z"
+            class="flame"
+        />
+        <path
+            d="m-125 500l-5 50h60l-5-50z"
+            class="nozzle"
+        />
+      </g
+      >
+      <path
+          d="m-100-250l75-150v-40h50v40l75 150z"
+      />
+      <circle
+          cy="-350"
+          cx="0"
+          r="20"
+          class="window"
+      />
+      <text
+          y="-270"
+          x="0"
+          class="logo"
+        >USA</text
+      >
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Rocket</dc:title
+        >
+        <dc:date
+          >2013-10-18T14:59:42</dc:date
+        >
+        <dc:description
+          >From the eBook, A New Day. SVG code can be inserted into an SVG image then scaled and positioned where desired.</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/185125/rocket-by-jaynick-185125</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >JayNick</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >handcoded</rdf:li
+            >
+            <rdf:li
+              >icon</rdf:li
+            >
+            <rdf:li
+              >rocket</rdf:li
+            >
+            <rdf:li
+              >ship</rdf:li
+            >
+            <rdf:li
+              >space</rdf:li
+            >
+            <rdf:li
+              >spacecraft</rdf:li
+            >
+            <rdf:li
+              >technology</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

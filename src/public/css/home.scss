@@ -1,0 +1,192 @@
+section {
+  font-size: 30px;
+  padding: 0;
+  margin: 0 auto;
+}
+.spacer {
+  aspect-ratio: 960/100;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#first-section {
+  padding: 0.5em 5px;
+  .inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+  h1 {
+    font-family: Roboto Mono, monospace;
+    padding: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0.3em 0;
+  }
+  h2 {
+    padding: 0;
+    margin: 0;
+    color: rgb(216, 216, 216);
+    font-size: 1.1em;
+    font-family: "TimeburnerBold";
+  }
+}
+#main-home-pic {
+  max-width: 670px;
+  min-width: 300px;
+  width: 45vw;
+}
+.main-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+.ci-text {
+  color: var(--palatte1-5);
+  font-size: 0.9em;
+  font-family: "Atmospheric";
+  padding: 0.6em 0;
+}
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 1vh 0;
+    gap: 1.2em;
+    font-size: 0.7em;
+  }
+  h2 {
+    margin: 0;
+    font-family: "AstroFace";
+    color: rgb(180, 180, 180);
+  }
+  a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    font-family: "Timeburner";
+    display: flex;
+    align-items: center;
+    &:hover {
+      transition: color 0.4s;
+      color: rgb(167, 167, 167);
+    }
+  }
+}
+#summary-section {
+  background-color: var(--palatte1-1);
+  .inner {
+    color: white;
+    padding: 1vh 8%;
+    margin: 0 auto;
+    max-width: var(--max-width);
+  }
+  h1 {
+    color: var(--palatte1-8);
+    font-size: 0.75em;
+    font-family: "Atmospheric";
+  }
+  p {
+    font-size: 0.7em;
+    font-family: "Timeburner";
+  }
+}
+#stats-section {
+  background: var(--palatte1-5);
+  .inner {
+    padding: 1vh 8%;
+    margin: 0 auto;
+    max-width: var(--max-width);
+  }
+  h1 {
+    color: var(--palatte1-8);
+    font-size: 0.75em;
+    font-family: "Atmospheric";
+  }
+}
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    display: flex;
+    padding: 0 0 1vh 0;
+    gap: 4vw;
+  }
+  h2 {
+    margin: 0;
+    font-size: 0.71em;
+    font-family: "AstroFace";
+    color: rgb(207, 207, 207);
+  }
+  span {
+    text-decoration: none;
+    font-size: 0.85em;
+    color: rgb(245, 245, 245);
+    font-family: "AstroFace";
+  }
+}
+
+@media (max-width: 900px) {
+  section {
+    font-size: 30px;
+  }
+}
+@media (max-width: 800px) {
+  section {
+    font-size: 27px;
+  }
+}
+@media (max-width: 700px) {
+  #first-section {
+    .inner {
+      flex-direction: column;
+    }
+  }
+  .main-info-section {
+    width: 100%;
+    align-items: center;
+    > div {
+      &:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+  section {
+    font-size: 25px;
+  }
+}
+@media (max-width: 600px) {
+  section {
+    font-size: 23px;
+  }
+}
+@media (max-width: 500px) {
+  section {
+    font-size: 20px;
+  }
+}
+
+/* iPhone */
+/* @media (max-width: 400px) {
+  section {
+    font-size: 18px;
+  }
+} */
+
+#splash-front-page {
+  width: 100%;
+  height: 80vh;
+  background: lightblue;
+}
+.rocket-thing {
+  width: 50px;
+}

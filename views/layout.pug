@@ -1,0 +1,62 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel="stylesheet" href="css/custom-fonts.css")
+    link(rel="stylesheet" href="css/hamburgers.css")
+    link(rel="stylesheet" href="css/main.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js") 
+    script(src="js/base_utils.js")
+    script(src="js/base.js")
+    script(src="js/lib/live.js")
+    block head
+    block title
+        title Ryan Bender
+#mobile-header
+    #hamburger-menu
+        svg(width='27' height='27' viewbox='0 0 100 100')
+            path.hamburger-line.hamburger-line1(d='M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058')
+            path.hamburger-line.hamburger-line2(d='M 20,50 H 80')
+            path.hamburger-line.hamburger-line3(d='M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942')
+div
+    nav.mobile-nav(style='display: none; opacity: 0;')
+        ul
+            li
+                a(href='#') Home
+            li
+                a(href='#') Experience
+            li
+                a(href='#') Projects
+header
+    .header-background.header-background0
+    .header-background.header-background1
+    nav
+        a.color-transition.hover-underline-animation(href='#') Home
+        a.color-transition.hover-underline-animation(href='#') Experience
+        a.color-transition.hover-underline-animation(href='#') Projects
+#header-spacer
+
+block content
+
+footer
+    .footer-column
+        #snake-game
+    .footer-column
+        span.verse My verse
+        span
+            | Website designed and developed by
+            | Ryan Bender
+    .footer-column
+        ul
+            li
+                img.fill-white.smooth-hover(src="images/svgs/github.svg" title='GitHub' alt='GitHub')
+            li
+                img.linkedin-icon.smooth-hover(src="images/svgs/linkedin.svg" title='Linkedin' alt='Linkedin')
+            li
+                img.instagram-icon.smooth-hover(src="images/svgs/instagram.svg" title='Instagram' alt='Instagram')
+        //- Google Analytics: change UA-38177297-2 to be your site's ID
+        //- script.
+        //-   window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+        //-   ga('create','UA-38177297-2','auto');ga('send','pageview')
+        //- script(src='https://www.google-analytics.com/analytics.js' async defer)

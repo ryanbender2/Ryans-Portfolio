@@ -1,0 +1,39 @@
+extends layout
+
+block title
+    title Home Page
+
+block head
+    link(rel="stylesheet", href="css/home.css")
+    script(src='js/home.js')
+
+block content
+    section#first-section
+        .inner
+            img#main-home-pic(src="images/home_pic.png" alt='Ryan')
+            .main-info-section
+                div
+                    h1 Ryan Bender
+                    h2 Full-Stack Developer
+                div
+                    .ci-text Contact Information
+                    ul.contact-info-list
+                        li
+                            h2 Phone #:
+                            a(href='tel: 5404232187') (540) 423-2187
+                        li
+                            h2 Email:
+                            a(href='mailto: ryan.bender.general@gmail.com') ryan.bender.general@gmail.com
+    .spacer(style="background-image: url('images/svgs/s1-to-s2.svg');")
+    section#summary-section
+        .inner
+            h1 Summary
+            p Ipsum anim excepteur minim esse laborum. Nulla dolore deserunt dolor do laboris aliquip proident ut dolore est dolor consequat. Mollit dolor minim minim ea ut in excepteur. Ea enim elit non proident dolore.
+    .spacer(style="background-image: url('images/svgs/s3-to-s4.svg');")
+    section#stats-section
+        .inner
+            h1 Stats
+            ul.stats-list
+    .spacer(style="background-image: url('images/svgs/s4-to-footer.svg');")
+    section#splash-front-page
+        img.rocket-thing(src="images/rockets/rocket-1.svg" alt='Thing')
