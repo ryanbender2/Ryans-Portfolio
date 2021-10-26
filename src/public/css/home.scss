@@ -3,6 +3,7 @@ section {
   padding: 0;
   margin: 0 auto;
 }
+
 .spacer {
   aspect-ratio: 960/100;
   width: 100%;
@@ -17,6 +18,13 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+#blob-thing {
+    aspect-ratio: 960/500;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #first-section {
